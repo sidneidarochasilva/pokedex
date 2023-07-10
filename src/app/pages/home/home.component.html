@@ -1,0 +1,44 @@
+<ng-container>
+  <div style="height:100vh">
+    <div class="container">
+      <div class="box-left">
+        <img id="logo" src="./../assets/image/logo_inicie.svg" />
+        <h1>
+          Explore o mundo dos
+          <span class="colorPokemons">Pokémons</span>
+        </h1>
+        <p class="info-box-left">Descubra todas as espécies de Pokémons.</p>
+        <div class="searchPokemons">
+          <input type="text" [(ngModel)]="pokemonSearch"/>
+          <button 
+          (click)="search(pokemonSearch || '')"
+          >Buscar</button>
+        </div>
+      </div>
+      <div>
+        <img style="width: 100%;" src="./../assets/image/trio_pokemon.svg" />
+      </div>
+    </div>
+  
+    <div class="box-center" #boxCenter>
+      <div>
+        <h2>Pokédex</h2>
+      </div>
+      <div>
+        <img class="icon-buttons"
+        (click)="previousListOfPokemons(10)"
+        src="./../assets/image/button_left.svg"
+         />
+  
+        <img class="icon-buttons"
+        (click)="nextPokemonList(10)"
+        src="./../assets/image/button_right.svg" 
+        />
+      </div>
+    </div>
+  
+      <app-card-pokemon 
+      [listPokemon]="listPokemons"
+      ></app-card-pokemon>
+  </div>
+</ng-container>

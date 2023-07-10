@@ -1,0 +1,45 @@
+<ng-container>
+  <div class="box-bottom" *ngIf="listPokemon && !listPokemon[0]?.error">
+    <div *ngFor="let pokemon of listPokemon">
+      <div class="card" (click)="redirectToPokemonDetails(pokemon.id)">
+        <div class="title-card">
+          <h2>
+            {{ pokemon.name | capitalizeFirstLetter }}
+          </h2>
+          <p>#{{ pokemon.id }}</p>
+        </div>
+
+        <div>
+          <img
+            *ngIf="pokemon.sprites.other.dream_world.front_default"
+            src="{{ pokemon.sprites.other.dream_world.front_default }}"
+          />
+          <img
+            *ngIf="!pokemon.sprites.other.dream_world.front_default"
+            src="{{ pokemon.sprites.front_default }}"
+          />
+        </div>
+
+        <div style="width: 100%">
+          <div class="title-card">
+            <h4>Altura:</h4>
+            <h4>{{ pokemon.height }}</h4>
+          </div>
+          <div class="title-card">
+            <h4>Peso:</h4>
+            <h4>{{ pokemon.weight }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-loading" *ngIf="listPokemon.length <= 0">
+    <img src="./../../../assets/image/loadingpikachu.gif" />
+    <p>Carregando...</p>
+  </div>
+
+  <div *ngIf="listPokemon[0]?.error">
+    <p>{{ listPokemon[0].error }}</p>
+  </div>
+</ng-container>

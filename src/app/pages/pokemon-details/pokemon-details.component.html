@@ -1,0 +1,65 @@
+<ng-container>
+  <div class="details-container">
+    <div class="box-details">
+      <img
+        id="logo"
+        (click)="redirectHome()"
+        src="./../assets/image/logo_inicie.svg"
+      />
+      <h1>{{ pokemonDetails?.forms[0].name | capitalizeFirstLetter }}</h1>
+      <div class="kind">
+        <p>COD: #{{ pokemonDetails?.id }}</p>
+        <p style="display: flex">
+          Tipo:
+          <span
+            *ngFor="let type of typePokemon"
+            [style.background-color]="type.color"
+            class="kindColor"
+          >
+            {{ type?.type }}
+          </span>
+        </p>
+      </div>
+
+      <h3>Descrição</h3>
+      <h4>{{ description }}</h4>
+
+      <h3>Informações</h3>
+      <div class="kind">
+        <div>
+          <p>Altura:</p>
+          <p>Peso:</p>
+        </div>
+        <div>
+          <p>{{ pokemonDetails?.height }}cm</p>
+          <p>{{ pokemonDetails?.weight }}Kg</p>
+        </div>
+      </div>
+
+      <div class="chart">
+        <div *ngFor="let bar of bars" class="bar-container">
+          <p class="bar-name">{{ bar.name }}</p>
+          <div
+            class="bar"
+            [style.width.%]="bar.value"
+            [style.background-color]="bar.color"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="pokemonImg">
+      <div>
+        <img
+          style="width: 100%"
+          *ngIf="pokemonDetails?.sprites.other.dream_world.front_default"
+          src="{{ pokemonDetails?.sprites.other.dream_world.front_default }}"
+        />
+        <img
+          style="width: 100%"
+          *ngIf="!pokemonDetails?.sprites.other.dream_world.front_default"
+          src="{{ pokemonDetails?.sprites.front_default }}"
+        />
+      </div>
+    </div>
+  </div>
+</ng-container>

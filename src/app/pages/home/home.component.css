@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.colorPokemons {
+  color: #ea686d;
+}
+
+.box-left {
+  margin-top: 113px;
+}
+.info-box-left {
+  margin: 24px 0px 31px 0px;
+}
+#logo {
+  position: absolute;
+  top: 15px;
+}
+
+.searchPokemons {
+  display: flex;
+  align-items: center;
+}
+.searchPokemons input:focus {
+  outline: none;
+}
+
+.box-center {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+}
+.icon-buttons {
+  cursor: pointer;
+
+}
+
+
+
+@media only screen and (max-width: 950px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}

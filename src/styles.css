@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(./reset.css);
+
+@font-face {
+  font-family: "Font ligth";
+  src: url("./assets/font/Nunito-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Bold";
+  src: url("./assets/font/Nunito-Bold.ttf") format("truetype");
+}
+
+* {
+  font-family: "Font ligth", sans-serif;
+  color: #2f3e77;
+ 
+}
+
+body{
+
+  background: #F8F8F8;
+  padding: 15px 74px 15px 106px;
+}
+h1 {
+  font-family: "Font Bold", sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+h2{
+  font-family: "Font Bold", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h3 {
+  font-family: "Font Bold", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+h4 {
+  font-family: "Font Bold", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.82px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+p {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+button {
+  width: 108px;
+  height: 43px;
+  background: #ea686d;
+  box-shadow: 0px 4px 15px #ea686d;
+  border-radius: 0px 5px 5px 0px;
+  border: 0;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: 0.1rem;
+
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+button:hover {
+  background: #ef6a6eac;
+  
+}
+
+
+
+input {
+  box-sizing: border-box;
+  width: 333px;
+  height: 44px;
+  background: #ffffff;
+  border: 1px solid #f4f4f4;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px 0px 0px 5px;
+}
